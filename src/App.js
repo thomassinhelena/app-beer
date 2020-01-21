@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import Apibeers from './bin/beeres.json';
+import Beers from './Components/Beers';
 import './App.css';
 
 function App() {
+  console.log(Apibeers);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="card">
+        <div className="card-body">
+          <table className="table">
+            <thead className="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Country</th>
+              <th scope="col">City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Apibeers.map((beer) => {
+              return <Beers name={beer.records.fields.name} country={beer.records.fields.country} city={beer.records.fields.city} />
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
   );
 }
 
