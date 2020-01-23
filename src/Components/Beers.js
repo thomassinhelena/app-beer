@@ -4,8 +4,10 @@ import './Beers.css';
 
 const Beers = (props) => {
   return(
-    <Fragment>     
-      {props.name} 
+    <Fragment> 
+      <div className="text">  
+      <h1>{props.name}</h1>
+      </div>  
       <div id="img">  
         <img src={props.image}/>     
       </div>

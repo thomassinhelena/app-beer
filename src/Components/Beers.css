@@ -1,7 +1,16 @@
 img {
-    vertical-align: middle;
-    border-style: none;
+    
     height: 50vh;
     margin-bottom: 30px;
+}
+
+#img {
+    display: flex;
+    justify-content: center;
+
+}
+
+.text {
+    text-align: center;
 }
 
