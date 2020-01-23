@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import './Beers.css';
 
 
 const Beers = (props) => {
   return(
-    <div>
-      <tr>
-        <td>{props.name}</td>
-        <td>{props.country}</td>
-        <td>{props.city}</td>
-      </tr>  
-    </div>
+    <Fragment>     
+      {props.name} 
+      <div id="img">  
+        <img src={props.image}/>     
+      </div>
+    </Fragment>
   )
 }
 
