@@ -6,13 +6,22 @@ import './App.css';
 function App() {
   console.log(Apibeers);
   return ( 
-    Apibeers.map((beer) => {
+    Apibeers.sort((a, b) =>{
+      if(a.name < b.name) { return -1; }
+      if(a.name > b.name) { return 1; }
+      return 0;
+    })
+      .map((beer) => {
       return <Beers 
         name={beer.name}
         image={beer.image_url}
+        description={beer.description}
+        brewed={beer.first_brewed}
       /> 
     })
   );
 };
 
 export default App;
+
+
